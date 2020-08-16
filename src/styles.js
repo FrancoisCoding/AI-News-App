@@ -54,7 +54,6 @@ export default makeStyles((theme) => ({
     },
   },
   logoContainer: {
-    padding: "0 5%",
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
@@ -72,5 +71,8 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       height: "35vmin",
     },
+  },
+  main: {
+    overflowX: "hidden",
   },
 }));

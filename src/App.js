@@ -24,7 +24,7 @@ const App = () => {
     });
   }, []);
   return (
-    <div>
+    <div className={classes.main}>
       <div className={classes.logoContainer}>
         <img
           src="https://alan.app/voice/images/previews/preview.jpg"
