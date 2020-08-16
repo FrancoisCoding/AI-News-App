@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import alanBtn from "@alan-ai/alan-sdk-web";
 import NewsCards from "./components/NewsCards/NewsCards";
+import useStyles from "./styles.js";
 
 const App = () => {
   const [newArticles, setNewsArticles] = useState([]);
+  const classes = useStyles();
+
   const alanKey =
     "02c15c3b2c68587db38042b771d735652e956eca572e1d8b807a3e2338fdd0dc/stage";
   useEffect(() => {
@@ -18,7 +21,13 @@ const App = () => {
   }, []);
   return (
     <div>
-      <h1>Alan AI News Application</h1>
+      <div className={classes.logoContainer}>
+        <img
+          src="https://alan.app/voice/images/previews/preview.jpg"
+          alt="Alan AI Logo"
+          className={classes.alanLogo}
+        />
+      </div>
       <NewsCards articles={newArticles} />
     </div>
   );
