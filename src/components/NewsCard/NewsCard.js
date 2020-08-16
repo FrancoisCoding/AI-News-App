@@ -16,6 +16,7 @@ const NewsCard = ({
   article: { description, publishedAt, source, title, url, urlToImage },
   i,
   activeArticle,
+  article,
 }) => {
   const classes = useStyles();
   const [elRefs, setElRefs] = useState([]);
@@ -35,6 +36,7 @@ const NewsCard = ({
     }
   }, [i, activeArticle, elRefs]);
 
+  console.log("ARTICLE", article);
   return (
     <Card
       ref={elRefs[i]}
@@ -47,8 +49,9 @@ const NewsCard = ({
         <CardMedia
           className={classes.media}
           image={
-            urlToImage ||
-            "https://www.industry.gov.au/sites/default/files/August%202018/image/news-placeholder-738.png"
+            urlToImage !== "null"
+              ? urlToImage
+              : "https://www.industry.gov.au/sites/default/files/August%202018/image/news-placeholder-738.png"
           }
         />
         <div className={classes.details}>
