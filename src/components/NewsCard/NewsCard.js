@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, createRef } from "react";
 import {
   Card,
   CardActions,
@@ -8,16 +8,23 @@ import {
   Button,
   Typography,
 } from "@material-ui/core";
+import classNames from "classnames";
 
 import useStyles from "./styles";
 
 const NewsCard = ({
   article: { description, publishedAt, source, title, url, urlToImage },
   i,
+  activeArticle,
 }) => {
   const classes = useStyles();
   return (
-    <Card className={classes.card}>
+    <Card
+      className={classNames(
+        classes.card,
+        activeArticle === i ? classes.activeCard : null
+      )}
+    >
       <CardActionArea href={url} target="_blank">
         <CardMedia
           className={classes.media}

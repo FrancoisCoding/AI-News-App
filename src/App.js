@@ -5,6 +5,7 @@ import useStyles from "./styles.js";
 
 const App = () => {
   const [newArticles, setNewsArticles] = useState([]);
+  const [activeArticle, setActiveArticle] = useState(-1);
   const classes = useStyles();
 
   const alanKey =
@@ -15,6 +16,9 @@ const App = () => {
       onCommand: ({ command, articles }) => {
         if (command === "newHeadlines") {
           setNewsArticles(articles);
+          setActiveArticle(-1);
+        } else if (command === "highlight") {
+          setActiveArticle((prevActiveArticle) => prevActiveArticle + 1);
         }
       },
     });
@@ -28,7 +32,7 @@ const App = () => {
           className={classes.alanLogo}
         />
       </div>
-      <NewsCards articles={newArticles} />
+      <NewsCards articles={newArticles} activeArticle={activeArticle} />
     </div>
   );
 };
