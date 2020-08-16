@@ -5,6 +5,7 @@ import useStyles from "./styles.js";
 
 const NewsCards = ({ articles }) => {
   const classes = useStyles();
+
   return (
     <Grow in>
       <Grid
