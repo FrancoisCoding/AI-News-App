@@ -32,13 +32,19 @@ const App = () => {
           if (parsedNumber > 20) {
             alanBtn().playText("Please select a smaller number and try again");
           } else if (article) {
-            window.open(article.url, "_blank");
+            console.log("ARTICLE TO OPEN", article);
+            window.open(article.url);
             alanBtn().playText("Opening ...");
           }
         }
       },
     });
   }, []);
+
+  const refreshPage = () => {
+    window.location.reload(false);
+  };
+
   return (
     <div className={classes.main}>
       <div className={classes.logoContainer}>
@@ -46,6 +52,7 @@ const App = () => {
           src="https://alan.app/voice/images/previews/preview.jpg"
           alt="Alan AI Logo"
           className={classes.alanLogo}
+          onClick={refreshPage}
         />
       </div>
       <NewsCards articles={newArticles} activeArticle={activeArticle} />

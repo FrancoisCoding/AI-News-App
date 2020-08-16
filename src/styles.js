@@ -71,6 +71,9 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       height: "35vmin",
     },
+    "&:hover": {
+      cursor: "pointer",
+    },
   },
   main: {
     overflowX: "hidden",
