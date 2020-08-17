@@ -48,7 +48,8 @@ const App = () => {
   }, []);
 
   const refreshPage = () => {
-    window.location.reload(false);
+    window.location.reload(true);
+    console.log("REFRESH");
   };
 
   return (
@@ -76,6 +77,7 @@ const App = () => {
           src="https://alan.app/voice/images/previews/preview.jpg"
           className={classes.alanLogo}
           alt="logo"
+          onClick={refreshPage}
         />
       </div>
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
