@@ -78,4 +78,7 @@ export default makeStyles((theme) => ({
   main: {
     overflowX: "hidden",
   },
+  feedback: {
+    textAlign: "center",
+  },
 }));
